@@ -19,13 +19,13 @@ public class SearchTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Check Logo at the HomePage")
+    @DisplayName("Check item/game at page")
     public void testSearchManchkinGame() {
         HomePage homePage = new HomePage();
         homePage.clickSearchField();
         homePage.enterGameName();
         homePage.clickSearchBtn();
         SearchPage searchPage = new SearchPage();
-        Assertions.assertEquals("", homePage.getLogoHeader());
+        Assertions.assertEquals("Вампирский Манчкин", searchPage.getNameofTheGame());
     }
 }
