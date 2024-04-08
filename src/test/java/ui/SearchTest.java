@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class SearchTest extends BaseTest {
     @Test
-    @DisplayName("Open results page")
+    @DisplayName("Open page with results")
     public void testOpenResultPage() {
         HomePage homePage = new HomePage();
         homePage.clickSearchField();
@@ -19,7 +19,7 @@ public class SearchTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Check item/game at page")
+    @DisplayName("Checking selected item/game at page")
     public void testSearchManchkinGame() {
         HomePage homePage = new HomePage();
         homePage.clickSearchField();
