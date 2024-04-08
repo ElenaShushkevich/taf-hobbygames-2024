@@ -8,6 +8,21 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class CheckoutTest extends BaseTest {
+    @Test
+    @DisplayName("Checking that open checkout page")
+    public void testOpenCheckoutPage() {
+        HomePage homePage = new HomePage();
+        homePage.clickSearchField();
+        homePage.enterGameName();
+        homePage.clickSearchBtn();
+        SearchPage searchPage = new SearchPage();
+        searchPage.clickAddToBasket();
+        searchPage.clickBasketBTN();
+        searchPage.navigateToBasket();
+        CheckoutPage checkoutPage = new CheckoutPage();
+        Assertions.assertEquals("Оформление заказа", checkoutPage.getCheckoutTitle());
+
+    }
 
     @Test
     @DisplayName("Checking item in the ordering")
