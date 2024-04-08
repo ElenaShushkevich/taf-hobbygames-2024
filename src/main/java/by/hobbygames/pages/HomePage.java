@@ -14,7 +14,7 @@ public class HomePage {
     }
 
     public String getLogoHeader() {
-        return driver.findElement(By.xpath(HomePageLocators.LOGO_HEADER_XPATH)).getText();
+        return driver.findElement(By.xpath(HomePageLocators.LOGO_HEADER_XPATH)).getAttribute("src");
     }
 
     public void clickSearchField() {

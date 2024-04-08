@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class HomeTest {
+public class HomeTest extends BaseTest {
     @Test
     @DisplayName("Check item at Home Page")
     public void testHomePageOpen() {
