@@ -37,8 +37,6 @@ public class SearchTest extends BaseTest {
         homePage.enterGameName();
         homePage.clickSearchBtn();
         SearchPage searchPage = new SearchPage();
-        Assertions.assertEquals(30,searchPage.getNumbersOfItemsAtTheResultPage());
-
+        Assertions.assertEquals(30, searchPage.getNumbersOfItemsAtTheResultPage());
     }
-
 }
