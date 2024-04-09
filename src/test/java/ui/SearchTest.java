@@ -30,7 +30,7 @@ public class SearchTest extends BaseTest {
     }
 
     @Test
-    @DisplayName("Count page items")
+    @DisplayName("Count product items")
     public void testCountItemsAtTheResultPage() {
         HomePage homePage = new HomePage();
         homePage.clickSearchField();
