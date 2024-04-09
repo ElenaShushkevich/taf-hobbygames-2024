@@ -4,6 +4,9 @@ import by.hobbygames.driver.Driver;
 import by.hobbygames.locators.SearchPageLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class SearchPage {
 
@@ -31,5 +34,10 @@ public class SearchPage {
 
     public void navigateToBasket() {
         driver.findElement(By.xpath(SearchPageLocators.REGISTRATION_OF_THE_ORDER_BTN_XPATH)).click();
+    }
+
+    public int getNumbersOfItemsAtTheResultPage(){
+        List< WebElement> numbersOfItems = driver.findElements(By.xpath(SearchPageLocators.ITEMS_XPATH));
+        return numbersOfItems.size();
     }
 }

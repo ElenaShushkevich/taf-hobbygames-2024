@@ -28,4 +28,17 @@ public class SearchTest extends BaseTest {
         SearchPage searchPage = new SearchPage();
         Assertions.assertEquals("Вампирский Манчкин", searchPage.getNameofTheGame());
     }
+
+    @Test
+    @DisplayName("Count page items")
+    public void testCountItemsAtTheResultPage() {
+        HomePage homePage = new HomePage();
+        homePage.clickSearchField();
+        homePage.enterGameName();
+        homePage.clickSearchBtn();
+        SearchPage searchPage = new SearchPage();
+        Assertions.assertEquals(30,searchPage.getNumbersOfItemsAtTheResultPage());
+
+    }
+
 }
