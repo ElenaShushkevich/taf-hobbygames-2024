@@ -23,13 +23,16 @@ public class DeliveryPage {
     public void clickNextButton() {
         driver.findElement(By.xpath(DeliveryPageLocators.NEXT_BTN_XPATH)).click();
     }
+    public String getErrorMessageWithoutStores() {
+        return driver.findElement(By.xpath(DeliveryPageLocators.ERROR_MESSAGE_WITHOUT_STORES_XPATH)).getText();
+    }
 
     public void clickRadioButtonPickUpFromStores() {
         driver.findElement(By.xpath(DeliveryPageLocators.RADIO_BTN_PICKUP_FROM_STORES_XPATH)).click();
     }
 
     public void clickSelectFromList(){
-        driver.findElement(By.xpath(DeliveryPageLocators.SELECT_FROM_LIST_XPATH)).click();
+        driver.findElement(By.xpath(DeliveryPageLocators.SELECT_FROM_LIST_BTN_XPATH)).click();
     }
     public void clickSelectPalazzoStore(){
         driver.findElement(By.xpath(DeliveryPageLocators.PALAZZO_STORES_XPATH)).click();
