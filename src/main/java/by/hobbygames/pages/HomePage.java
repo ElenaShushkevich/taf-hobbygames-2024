@@ -28,4 +28,11 @@ public class HomePage {
     public void clickSearchBtn() {
         driver.findElement(By.xpath(HomePageLocators.SEARCH_BTN_XPATH)).click();
     }
+
+    public void clickLoginIcon(){
+        driver.findElement(By.xpath(HomePageLocators.LOGIN_BTN_XPATH)).click();
+    }
+    public void clickEnterButton(){
+        driver.findElement(By.xpath(HomePageLocators.SUBMIT_BTH_XPATH)).click();
+    }
 }
