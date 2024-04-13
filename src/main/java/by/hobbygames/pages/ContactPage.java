@@ -35,5 +35,4 @@ public class ContactPage {
     public String getEnteredContactsData() {
         return driver.findElement(By.xpath(ContactPageLocators.CONTACTS_DATA_XPATH)).getText();
     }
-
 }

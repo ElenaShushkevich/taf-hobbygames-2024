@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class PaymentTest extends BaseTest{
+public class PaymentTest extends BaseTest {
     @Test
     @DisplayName("Check payment method")
-    public void testPaymentMethod(){
+    public void testPaymentMethod() {
         HomePage homePage = new HomePage();
         homePage.clickSearchField();
         homePage.enterGameName();
@@ -30,6 +30,6 @@ public class PaymentTest extends BaseTest{
         contactPage.enterPhone();
         contactPage.clickNextBTN();
         PaymentPage paymentPage = new PaymentPage();
-        Assertions.assertEquals("Оплата при получении заказа",paymentPage.getMethodPayment());
+        Assertions.assertEquals("Оплата при получении заказа", paymentPage.getMethodPayment());
     }
 }

@@ -28,7 +28,7 @@ public class DeliveryTest extends BaseTest {
 
     @Test
     @DisplayName("Check error message before any action at the delivery part")
-    public void testMethodReceivingOrderErrorMessage(){
+    public void testMethodReceivingOrderErrorMessage() {
         HomePage homePage = new HomePage();
         homePage.clickSearchField();
         homePage.enterGameName();
@@ -46,7 +46,7 @@ public class DeliveryTest extends BaseTest {
 
     @Test
     @DisplayName("Check error message without stores")
-    public void testSelectStoresErrorMessage(){
+    public void testSelectStoresErrorMessage() {
         HomePage homePage = new HomePage();
         homePage.clickSearchField();
         homePage.enterGameName();
@@ -65,7 +65,7 @@ public class DeliveryTest extends BaseTest {
 
     @Test
     @DisplayName("Check store name at the delivery part")
-    public void testStoreName(){
+    public void testStoreName() {
         HomePage homePage = new HomePage();
         homePage.clickSearchField();
         homePage.enterGameName();

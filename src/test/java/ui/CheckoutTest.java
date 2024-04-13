@@ -38,5 +38,4 @@ public class CheckoutTest extends BaseTest {
         CheckoutPage checkoutPage = new CheckoutPage();
         Assertions.assertEquals("Вампирский Манчкин", checkoutPage.getTitleOfOrder());
     }
-
 }

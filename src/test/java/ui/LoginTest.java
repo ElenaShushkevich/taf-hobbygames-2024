@@ -65,6 +65,7 @@ public class LoginTest extends BaseTest {
                 () -> assertEquals("Неверный пароль", loginModal.getPasswordError())
         );
     }
+
     @Test
     @DisplayName("Login with non-existent email and  password")
     public void testLoginWithNonExistentPhoneAndPassword() {
@@ -79,5 +80,4 @@ public class LoginTest extends BaseTest {
                 () -> assertEquals("Неверный пароль", loginModal.getPasswordError())
         );
     }
-
 }

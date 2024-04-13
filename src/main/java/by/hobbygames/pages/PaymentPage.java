@@ -11,8 +11,8 @@ public class PaymentPage {
     public PaymentPage() {
         this.driver = Driver.getDriver();
     }
-    public String getMethodPayment(){
+
+    public String getMethodPayment() {
         return driver.findElement(By.xpath(PaymentPageLocators.PAYMENT_METHOD_XPATH)).getText();
     }
-
 }

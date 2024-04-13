@@ -32,6 +32,6 @@ public class ContactTest extends BaseTest {
         contactPage.clickNextBTN();
         Assertions.assertEquals("Елена\n" +
                 "+375-(45)-375-23-75\n" +
-                "test@test.com",contactPage.getEnteredContactsData());
+                "test@test.com", contactPage.getEnteredContactsData());
     }
 }

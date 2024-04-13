@@ -36,8 +36,8 @@ public class SearchPage {
         driver.findElement(By.xpath(SearchPageLocators.REGISTRATION_OF_THE_ORDER_BTN_XPATH)).click();
     }
 
-    public int getNumbersOfItemsAtTheResultPage(){
-        List< WebElement> numbersOfItems = driver.findElements(By.xpath(SearchPageLocators.ITEMS_XPATH));
+    public int getNumbersOfItemsAtTheResultPage() {
+        List<WebElement> numbersOfItems = driver.findElements(By.xpath(SearchPageLocators.ITEMS_XPATH));
         return numbersOfItems.size();
     }
 }
