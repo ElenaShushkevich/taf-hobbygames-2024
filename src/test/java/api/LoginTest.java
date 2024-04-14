@@ -17,6 +17,7 @@ public class LoginTest {
                 when().
                 post("https://hobbygames.by/?route=account/login/modalAjax").
                 then().statusCode(200);
+
     }
 
     @Test
@@ -45,5 +46,17 @@ public class LoginTest {
                 post("https://hobbygames.by/?route=account/login/modalAjax").
                 then().statusCode(200).
                 body(equalTo(errorWithInvalidPhone));
+    }
+
+    @Test
+    @DisplayName("500 Status code")
+    public void testInvalidEmail() {
+        String body = "login=%40test%40&password=&scenario=email";
+        given().
+                contentType("application/x-www-form-urlencoded; charset=UTF-8").
+                body(body).
+                when().
+                post("https://hobbygames.by/?route=account/login/modalAjax").
+                then().statusCode(500);
     }
 }
