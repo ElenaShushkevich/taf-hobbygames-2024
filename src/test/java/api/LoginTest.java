@@ -29,7 +29,8 @@ public class LoginTest {
                 body(body).
                 when().
                 post("https://hobbygames.by/?route=account/login/modalAjax").
-                then().statusCode(200).body(equalTo(errorWithoutAnyDate));
+                then().statusCode(200).
+                body(equalTo(errorWithoutAnyDate));
     }
 
     @Test
@@ -42,6 +43,7 @@ public class LoginTest {
                 body(body).
                 when().
                 post("https://hobbygames.by/?route=account/login/modalAjax").
-                then().statusCode(200).body(equalTo(errorWithInvalidPhone));
+                then().statusCode(200).
+                body(equalTo(errorWithInvalidPhone));
     }
 }
