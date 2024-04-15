@@ -19,7 +19,7 @@ public class ContactTest extends BaseTest {
         searchPage.clickBasketBTN();
         searchPage.navigateToBasket();
         CheckoutPage checkoutPage = new CheckoutPage();
-        checkoutPage.clickNextBTNAtCheckuotPage();
+        checkoutPage.clickNextBTNAtCheckoutPage();
         DeliveryPage deliveryPage = new DeliveryPage();
         deliveryPage.clickRadioButtonPickUpFromStores();
         deliveryPage.clickSelectFromList();

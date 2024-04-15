@@ -2,8 +2,13 @@ package by.hobbygames.pages;
 
 import by.hobbygames.driver.Driver;
 import by.hobbygames.locators.ContactPageLocators;
+import by.hobbygames.locators.SearchPageLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ContactPage {
     WebDriver driver;
@@ -17,6 +22,8 @@ public class ContactPage {
     }
 
     public void enterName() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ContactPageLocators.NAME_INPUT_FIELD_XPATH)));
         driver.findElement(By.xpath(ContactPageLocators.NAME_INPUT_FIELD_XPATH)).sendKeys("Елена");
     }
 
@@ -33,6 +40,8 @@ public class ContactPage {
     }
 
     public String getEnteredContactsData() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ContactPageLocators.CONTACTS_DATA_XPATH)));
         return driver.findElement(By.xpath(ContactPageLocators.CONTACTS_DATA_XPATH)).getText();
     }
 }

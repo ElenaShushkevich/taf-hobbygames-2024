@@ -5,7 +5,11 @@ import by.hobbygames.locators.SearchPageLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class SearchPage {
@@ -21,6 +25,8 @@ public class SearchPage {
     }
 
     public String getResults() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(SearchPageLocators.VAMPIRSKIJ_MANCHKIN_XPATH)));
         return driver.findElement(By.xpath(SearchPageLocators.RESULTS_OF_SEARCH_XPATH)).getText();
     }
 
@@ -29,6 +35,8 @@ public class SearchPage {
     }
 
     public void clickBasketBTN() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(SearchPageLocators.VAMPIRSKIJ_MANCHKIN_XPATH)));
         driver.findElement(By.xpath(SearchPageLocators.BASKET_BTN_XPATH)).click();
     }
 

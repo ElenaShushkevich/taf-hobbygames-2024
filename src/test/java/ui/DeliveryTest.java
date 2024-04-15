@@ -21,7 +21,7 @@ public class DeliveryTest extends BaseTest {
         searchPage.clickBasketBTN();
         searchPage.navigateToBasket();
         CheckoutPage checkoutPage = new CheckoutPage();
-        checkoutPage.clickNextBTNAtCheckuotPage();
+        checkoutPage.clickNextBTNAtCheckoutPage();
         DeliveryPage deliveryPage = new DeliveryPage();
         Assertions.assertEquals("Способ получения", deliveryPage.getDeliveryHeader());
     }
@@ -38,7 +38,7 @@ public class DeliveryTest extends BaseTest {
         searchPage.clickBasketBTN();
         searchPage.navigateToBasket();
         CheckoutPage checkoutPage = new CheckoutPage();
-        checkoutPage.clickNextBTNAtCheckuotPage();
+        checkoutPage.clickNextBTNAtCheckoutPage();
         DeliveryPage deliveryPage = new DeliveryPage();
         deliveryPage.clickNextButton();
         Assertions.assertEquals("Выберите способ получения заказа", deliveryPage.getErrorMessage());
@@ -56,7 +56,7 @@ public class DeliveryTest extends BaseTest {
         searchPage.clickBasketBTN();
         searchPage.navigateToBasket();
         CheckoutPage checkoutPage = new CheckoutPage();
-        checkoutPage.clickNextBTNAtCheckuotPage();
+        checkoutPage.clickNextBTNAtCheckoutPage();
         DeliveryPage deliveryPage = new DeliveryPage();
         deliveryPage.clickRadioButtonPickUpFromStores();
         deliveryPage.clickNextButton();
@@ -75,14 +75,12 @@ public class DeliveryTest extends BaseTest {
         searchPage.clickBasketBTN();
         searchPage.navigateToBasket();
         CheckoutPage checkoutPage = new CheckoutPage();
-        checkoutPage.clickNextBTNAtCheckuotPage();
+        checkoutPage.clickNextBTNAtCheckoutPage();
         DeliveryPage deliveryPage = new DeliveryPage();
         deliveryPage.clickRadioButtonPickUpFromStores();
         deliveryPage.clickSelectFromList();
         deliveryPage.clickSelectPalazzoStore();
-        Assertions.assertEquals("Минск, ТРЦ Palazzo ?\n" +
-                "Доставка с центрального склада\n" +
-                "Республика Беларусь, г. Минск, ул. Тимирязева, д. 74а, ТРЦ Palazzo\n" +
-                "10:00 – 22:00 Без перерывов и выходных", deliveryPage.getAddedStoreName());
+        Assertions.assertEquals("Минск, ТРЦ Palazzo\n" +
+               "Республика Беларусь, г. Минск, ул. Тимирязева, д. 74а, ТРЦ Palazzo\n" + "10:00 – 22:00 Без перерывов и выходных", deliveryPage.getAddedStoreName());
     }
 }
