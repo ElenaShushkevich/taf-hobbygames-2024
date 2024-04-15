@@ -36,11 +36,13 @@ public class ContactPage {
     }
 
     public void clickNextBTN() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ContactPageLocators.NEXT_BTN_XPATH)));
         driver.findElement(By.xpath(ContactPageLocators.NEXT_BTN_XPATH)).click();
     }
 
     public String getEnteredContactsData() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ContactPageLocators.CONTACTS_DATA_XPATH)));
         return driver.findElement(By.xpath(ContactPageLocators.CONTACTS_DATA_XPATH)).getText();
     }

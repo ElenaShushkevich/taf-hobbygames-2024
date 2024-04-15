@@ -18,7 +18,7 @@ public class PaymentPage {
     }
 
     public String getMethodPayment() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(PaymentPageLocators.PAYMENT_METHOD_XPATH)));
         return driver.findElement(By.xpath(PaymentPageLocators.PAYMENT_METHOD_XPATH)).getText();
     }

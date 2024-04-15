@@ -20,7 +20,8 @@ public class CheckoutPage {
         return driver.findElement(By.xpath(CheckoutPageLocators.CHECKOUT_TITLE_XPATH)).getText();
     }
     public String getTitleOfOrder(){
-
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.ITEM_IN_BASKET_XPATH)));
         return driver.findElement(By.xpath(CheckoutPageLocators.ITEM_IN_BASKET_XPATH)).getText();
     }
     public void clickNextBTNAtCheckoutPage(){

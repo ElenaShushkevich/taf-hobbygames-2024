@@ -36,7 +36,7 @@ public class SearchPage {
 
     public void clickBasketBTN() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(SearchPageLocators.VAMPIRSKIJ_MANCHKIN_XPATH)));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(SearchPageLocators.BASKET_BTN_XPATH)));
         driver.findElement(By.xpath(SearchPageLocators.BASKET_BTN_XPATH)).click();
     }
 

@@ -18,6 +18,8 @@ public class DeliveryPage {
     }
 
     public String getDeliveryHeader() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.DELIVERY_TITLE_XPATH)));
         return driver.findElement(By.xpath(DeliveryPageLocators.DELIVERY_TITLE_XPATH)).getText();
     }
 
@@ -26,8 +28,8 @@ public class DeliveryPage {
     }
 
     public void clickNextButton() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.ADDED_STORES_TO_DELIVERY)));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.NEXT_BTN_XPATH)));
         driver.findElement(By.xpath(DeliveryPageLocators.NEXT_BTN_XPATH)).click();
     }
 
@@ -49,7 +51,7 @@ public class DeliveryPage {
 
     public void clickSelectPalazzoStore() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.MODAL_FOR_STORES_XPATH)));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.PALAZZO_STORES_XPATH)));
         driver.findElement(By.xpath(DeliveryPageLocators.PALAZZO_STORES_XPATH)).click();
     }
 
