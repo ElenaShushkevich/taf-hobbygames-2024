@@ -25,8 +25,9 @@ public class DeliveryPage extends BasePage {
     }
 
     public void clickNextButton() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.NEXT_BTN_XPATH)));
+        waitJSLoad();
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.NEXT_BTN_XPATH)));
         driver.findElement(By.xpath(DeliveryPageLocators.NEXT_BTN_XPATH)).click();
     }
 
