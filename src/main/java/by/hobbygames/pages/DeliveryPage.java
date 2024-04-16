@@ -2,16 +2,13 @@ package by.hobbygames.pages;
 
 import by.hobbygames.driver.Driver;
 import by.hobbygames.locators.DeliveryPageLocators;
-import by.hobbygames.locators.SearchPageLocators;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class DeliveryPage {
-    WebDriver driver;
+public class DeliveryPage extends BasePage {
 
     public DeliveryPage() {
         this.driver = Driver.getDriver();
@@ -38,20 +35,17 @@ public class DeliveryPage {
     }
 
     public void clickRadioButtonPickUpFromStores() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.NEXT_BTN_XPATH)));
+        waitJSLoad();
         driver.findElement(By.xpath(DeliveryPageLocators.RADIO_BTN_PICKUP_FROM_STORES_XPATH)).click();
     }
 
     public void clickSelectFromList() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.SELECT_FROM_LIST_BTN_XPATH)));
+        waitJSLoad();
         driver.findElement(By.xpath(DeliveryPageLocators.SELECT_FROM_LIST_BTN_XPATH)).click();
     }
 
     public void clickSelectPalazzoStore() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(DeliveryPageLocators.PALAZZO_STORES_XPATH)));
+        waitJSLoad();
         driver.findElement(By.xpath(DeliveryPageLocators.PALAZZO_STORES_XPATH)).click();
     }
 
