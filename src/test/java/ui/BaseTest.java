@@ -1,12 +1,14 @@
 package ui;
 
 import by.hobbygames.driver.Driver;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
 public class BaseTest {
-    WebDriver driver;
+    static WebDriver driver;
 
     @BeforeEach
     public void warmUp() {

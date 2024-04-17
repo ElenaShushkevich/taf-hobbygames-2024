@@ -11,7 +11,7 @@ public class BasePage {
     WebDriver driver;
 
     public void waitJSLoad() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofSeconds(5));
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {

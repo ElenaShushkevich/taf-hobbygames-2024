@@ -39,4 +39,15 @@ public class SearchTest extends BaseTest {
         SearchPage searchPage = new SearchPage();
         Assertions.assertEquals(30, searchPage.getNumbersOfItemsAtTheResultPage());
     }
+
+    @Test
+    @DisplayName("Name of items")
+    public void testItemsContainGameName() {
+        HomePage homePage = new HomePage();
+        homePage.clickSearchField();
+        homePage.enterGameName();
+        homePage.clickSearchBtn();
+        SearchPage searchPage = new SearchPage();
+        Assertions.assertTrue(searchPage.getNameOfItems().contains("Манчкин"));
+    }
 }

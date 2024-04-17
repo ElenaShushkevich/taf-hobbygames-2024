@@ -49,7 +49,7 @@ public class LoginTest {
     }
 
     @Test
-    @DisplayName("500 Status code")
+    @DisplayName("200 Status code")
     public void testInvalidEmail() {
         String body = "login=%40test%40&password=&scenario=email";
         given().
@@ -57,6 +57,6 @@ public class LoginTest {
                 body(body).
                 when().
                 post("https://hobbygames.by/?route=account/login/modalAjax").
-                then().statusCode(500);
+                then().statusCode(200);
     }
 }

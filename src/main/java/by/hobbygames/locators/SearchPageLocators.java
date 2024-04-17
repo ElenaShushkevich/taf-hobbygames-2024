@@ -5,6 +5,7 @@ public class SearchPageLocators {
     public static final String ADD_TO_BASKET_BTN_XPATH = "//a[@data-id=\"39238\"]";
     public static final String BASKET_BTN_XPATH = "//div[@class=\"c-button\"]";
     public static final String REGISTRATION_OF_THE_ORDER_BTN_XPATH = "//a[@href='/zakaz']";
-    public static final String RESULTS_OF_SEARCH_XPATH ="//h1";
+    public static final String RESULTS_OF_SEARCH_XPATH = "//h1";
     public static final String ITEMS_XPATH = "//div[@class = 'border']";
+    public static final String NAME_OF_ITEMS_XPATH = "//div[@class = 'name-desc']";
 }

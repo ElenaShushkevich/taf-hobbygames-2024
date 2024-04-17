@@ -1,7 +1,6 @@
 package by.hobbygames.pages;
 
 import by.hobbygames.driver.Driver;
-import by.hobbygames.locators.DeliveryPageLocators;
 import by.hobbygames.locators.LoginModalLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginModal {
-    WebDriver driver;
-
+public class LoginModal extends BasePage {
     public LoginModal() {
         this.driver = Driver.getDriver();
     }
@@ -21,17 +18,20 @@ public class LoginModal {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LoginModalLocators.SUBMIT_BTH_XPATH)));
         driver.findElement(By.xpath(LoginModalLocators.SUBMIT_BTH_XPATH)).click();
+        waitJSLoad();
     }
 
     public String getPhoneOrEmailError() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LoginModalLocators.ERROR_FOR_EMAIL_FIELD_XPATH)));
+        waitJSLoad();
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LoginModalLocators.ERROR_FOR_EMAIL_FIELD_XPATH)));
         return driver.findElement(By.xpath(LoginModalLocators.ERROR_FOR_EMAIL_FIELD_XPATH)).getText();
     }
 
     public String getPasswordError() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LoginModalLocators.ERROR_FOR_PASSWORD_FIELD_XPATH)));
+        waitJSLoad();
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LoginModalLocators.ERROR_FOR_PASSWORD_FIELD_XPATH)));
         return driver.findElement(By.xpath(LoginModalLocators.ERROR_FOR_PASSWORD_FIELD_XPATH)).getText();
     }
 

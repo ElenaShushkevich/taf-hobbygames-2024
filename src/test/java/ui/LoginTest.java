@@ -51,4 +51,17 @@ public class LoginTest extends BaseTest {
                 () -> assertEquals("Неверный пароль", loginModal.getPasswordError())
         );
     }
+    @Test
+    @DisplayName("Login with invalid phone/email and w/o password")
+    public void testLoginWithInvalidEmailEmptyPassword() {
+        HomePage homePage = new HomePage();
+        homePage.clickLoginIcon();
+        LoginModal loginModal = new LoginModal();
+        loginModal.enterPhoneOrEmail("test@mail");
+        loginModal.clickEnterButton();
+        assertAll(
+                () -> assertEquals("Введённые данные некорректны", loginModal.getPhoneOrEmailError()),
+                () -> assertEquals("Введите пароль", loginModal.getPasswordError())
+        );
+    }
 }
