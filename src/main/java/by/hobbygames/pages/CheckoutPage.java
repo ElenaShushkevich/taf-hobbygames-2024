@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CheckoutPage extends BasePage {
+public class CheckoutPage extends JSExecutor {
     public CheckoutPage() {
         super.driver = Driver.getDriver();
     }

@@ -3,10 +3,8 @@ package by.hobbygames.pages;
 import by.hobbygames.driver.Driver;
 import by.hobbygames.locators.HomePageLocators;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class HomePage extends BasePage {
+public class HomePage extends JSExecutor {
     public HomePage() {
         this.driver = Driver.getDriver();
     }

@@ -3,16 +3,14 @@ package by.hobbygames.pages;
 import by.hobbygames.driver.Driver;
 import by.hobbygames.locators.SearchPageLocators;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.List;
 
-public class SearchPage extends BasePage{
+public class SearchPage extends JSExecutor {
 
     public SearchPage() {
         this.driver = Driver.getDriver();
