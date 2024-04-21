@@ -4,4 +4,4 @@
 - page odject
 - util classed
 
-** Тестируемый сайе** : https://hobbygames.by/
+** Тестируемый сайт** : https://hobbygames.by/
