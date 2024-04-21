@@ -1,7 +1,7 @@
 ## Архитектура проекта
 
 Проект состоит из модулей:
-- page odject
-- util classed
+- page object
+- util classes
 
 ** Тестируемый сайт** : https://hobbygames.by/
