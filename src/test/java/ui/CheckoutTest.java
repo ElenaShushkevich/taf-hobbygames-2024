@@ -1,6 +1,8 @@
 package ui;
 
-import by.hobbygames.pages.*;
+import by.hobbygames.ui.pages.CheckoutPage;
+import by.hobbygames.ui.pages.HomePage;
+import by.hobbygames.ui.pages.SearchPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

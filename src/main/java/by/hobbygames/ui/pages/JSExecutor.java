@@ -1,4 +1,4 @@
-package by.hobbygames.pages;
+package by.hobbygames.ui.pages;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

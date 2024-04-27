@@ -1,4 +1,4 @@
-package by.hobbygames.locators;
+package by.hobbygames.ui.locators;
 
 public class SearchPageLocators {
     public static final String VAMPIRSKIJ_MANCHKIN_XPATH = "//a[@title=\"Вампирский Манчкин\"]";

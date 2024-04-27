@@ -1,4 +1,4 @@
-package by.hobbygames.locators;
+package by.hobbygames.ui.locators;
 
 public class LoginModalLocators {
     public static final String LOGIN_POPUP_XPATH = "//div[@class='login-popup']";

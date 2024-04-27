@@ -1,4 +1,4 @@
-package by.hobbygames.locators;
+package by.hobbygames.ui.locators;
 
 public class CheckoutPageLocators {
     public static final String CHECKOUT_TITLE_XPATH = "//h2";

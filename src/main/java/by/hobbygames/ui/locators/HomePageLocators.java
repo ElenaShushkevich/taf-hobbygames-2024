@@ -1,4 +1,4 @@
-package by.hobbygames.locators;
+package by.hobbygames.ui.locators;
 
 public class HomePageLocators {
     public static final String LOGO_HEADER_XPATH = "(//img[@src='https://hobbygames.by/assets/img/svg/logo.svg'])[1]";

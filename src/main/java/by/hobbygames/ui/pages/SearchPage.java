@@ -1,7 +1,7 @@
-package by.hobbygames.pages;
+package by.hobbygames.ui.pages;
 
-import by.hobbygames.driver.Driver;
-import by.hobbygames.locators.SearchPageLocators;
+import by.hobbygames.ui.driver.Driver;
+import by.hobbygames.ui.locators.SearchPageLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
