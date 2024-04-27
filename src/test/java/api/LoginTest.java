@@ -21,8 +21,8 @@ public class LoginTest {
                 when().
                 post(LoginService.LOGIN_URL).
                 then().statusCode(200).
-                body(ResponseFields.ERRORS_PHONE, equalTo(ErrorsFromService.ERRORS_WITH_EMPTY_PHONE)).
-                body(ResponseFields.ERRORS_PASSWORD, equalTo(ErrorsFromService.ERROR_WITH_EMPTY_PASSWORD)).
+                body(ResponseFields.ERRORS_PHONE, equalTo(ErrorsFromService.ERRORS_WITH_EMPTY_PHONE)).and().
+                body(ResponseFields.ERRORS_PASSWORD, equalTo(ErrorsFromService.ERROR_WITH_EMPTY_PASSWORD)).and().
                 body(ResponseFields.ERRORS_LOGIN, equalTo(ErrorsFromService.ERRORS_WITH_EMPTY_PHONE_EMAIL));
     }
 
@@ -35,8 +35,8 @@ public class LoginTest {
                 when().
                 post(LoginService.LOGIN_URL).
                 then().statusCode(200).
-                body(ResponseFields.ERRORS_PHONE, equalTo(ErrorsFromService.ERRORS_WITH_UNREGISTER_PHONE)).
-                body(ResponseFields.ERRORS_PASSWORD, equalTo(ErrorsFromService.ERROR_WITH_EMPTY_PASSWORD)).
+                body(ResponseFields.ERRORS_PHONE, equalTo(ErrorsFromService.ERRORS_WITH_UNREGISTER_PHONE)).and().
+                body(ResponseFields.ERRORS_PASSWORD, equalTo(ErrorsFromService.ERROR_WITH_EMPTY_PASSWORD)).and().
                 body(ResponseFields.ERRORS_LOGIN, equalTo(ErrorsFromService.ERROR_INVALID_EMAIL));
     }
 
