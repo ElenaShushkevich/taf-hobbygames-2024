@@ -1,5 +1,6 @@
 package api;
 
+import by.hobbygames.api.ErrorsFromService;
 import by.hobbygames.api.LoginService;
 import by.hobbygames.api.ResponseFields;
 import org.junit.jupiter.api.DisplayName;
@@ -14,28 +15,16 @@ public class LoginTest {
     @Test
     @DisplayName("Status code for Login w/o phone/email and w/o password")
     public void testWithoutPhoneAndPassword() {
-        String body = "login=&password=&scenario=email";
         given().
-                contentType("application/x-www-form-urlencoded; charset=UTF-8").
-                body(body).
+                headers(LoginService.getHeaders()).
+                body(LoginService.putBody("","")).
                 when().
                 post(LoginService.LOGIN_URL).
-                then().statusCode(200);
-
+                then().statusCode(200).
+                body(ResponseFields.ERRORS_PHONE, equalTo(ErrorsFromService.ERRORS_WITH_EMPTY_PHONE)).
+                body(ResponseFields.ERRORS_PASSWORD, equalTo(ErrorsFromService.ERROR_WITH_EMPTY_PASSWORD)).
+                body(ResponseFields.ERRORS_LOGIN, equalTo(ErrorsFromService.ERRORS_WITH_EMPTY_PHONE_EMAIL));
     }
-
-//    @Test
-//    @DisplayName("Status code and message for Login w/o phone/email and w/o password")
-//    public void testMessageWithoutPhoneAndPassword() {
-//        String body = "login=&password=&scenario=email";
-//               given().
-//                headers(LoginService.getHeaders()).
-//                body(LoginService.putBody("","")).
-//                when().
-//                post(LoginService.LOGIN_URL).
-//                then().statusCode(200).
-//               // body(equalTo(LoginService.ERROR_WITHOUt_ANY_DATA));
-//    }
 
     @Test
     @DisplayName("Status code and message for invalid phone/email")
@@ -46,18 +35,17 @@ public class LoginTest {
                 when().
                 post(LoginService.LOGIN_URL).
                 then().statusCode(200).
-                body(ResponseFields.ERRORS_PHONE, equalTo("Такой телефон не зарегистрирован")).
-                body(ResponseFields.ERRORS_PASSWORD, equalTo("Введите пароль")).
-                body(ResponseFields.ERRORS_LOGIN, equalTo("Неверный телефон/e-mail"));
+                body(ResponseFields.ERRORS_PHONE, equalTo(ErrorsFromService.ERRORS_WITH_UNREGISTER_PHONE)).
+                body(ResponseFields.ERRORS_PASSWORD, equalTo(ErrorsFromService.ERROR_WITH_EMPTY_PASSWORD)).
+                body(ResponseFields.ERRORS_LOGIN, equalTo(ErrorsFromService.ERROR_INVALID_EMAIL));
     }
 
     @Test
     @DisplayName("200 Status code")
     public void testInvalidEmail() {
-        String body = "login=%40test%40&password=&scenario=email";
-        given().
+                given().
                 contentType("application/x-www-form-urlencoded; charset=UTF-8").
-                body(body).
+                body(LoginService.putBody("+3754412345678","12345678")).
                 when().
                 post(LoginService.LOGIN_URL).
                 then().statusCode(200);
