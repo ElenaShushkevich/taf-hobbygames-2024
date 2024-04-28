@@ -109,10 +109,10 @@ public class CheckoutTest extends BaseTest {
         Assertions.assertEquals("Минск, ТРЦ Palazzo\n" +
                 "Республика Беларусь, г. Минск, ул. Тимирязева, д. 74а, ТРЦ Palazzo\n" + "10:00 – 22:00 Без перерывов и выходных", checkoutPage.getAddedStoreName());
     }
+
     @Test
     @DisplayName("Check added contacts data")
     public void testAddedContactsData() {
-
         HomePage homePage = new HomePage();
         homePage.clickSearchField();
         homePage.enterGameName();
@@ -135,6 +135,7 @@ public class CheckoutTest extends BaseTest {
                 "+375-(45)-375-23-75\n" +
                 "test@test.com", checkoutPage.getEnteredContactsData());
     }
+
     @Test
     @DisplayName("Check payment method")
     public void testPaymentMethod() {

@@ -29,10 +29,6 @@ public class ResponseBody {
         return errors;
     }
 
-    public void setErrors(Errors errors) {
-        this.errors = errors;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
