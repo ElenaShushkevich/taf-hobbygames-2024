@@ -30,14 +30,14 @@ public class LoginTest {
     }
 
     @Test
-    @DisplayName("Status code and message for invalid phone/email")
+    @DisplayName("Status code and messages for invalid phone/email")
     public void testMessageInvalidPhone() {
         ValidatableResponse validatableResponse = given().
                 contentType("application/x-www-form-urlencoded; charset=UTF-8").
                 body(LoginService.putBody("12345674777", "")).
                 when().
                 post(LoginService.LOGIN_URL).
-                then();
+                then().statusCode(200);
         ResponseBody responseBody = validatableResponse.extract().as(ResponseBody.class);
         Assertions.assertEquals(TextErrorsFromService.ERRORS_WITH_UNREGISTER_PHONE, responseBody.getErrors().getPhone());
         Assertions.assertEquals(TextErrorsFromService.ERROR_WITH_EMPTY_PASSWORD, responseBody.getErrors().getPassword());

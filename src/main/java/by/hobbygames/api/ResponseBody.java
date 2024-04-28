@@ -7,7 +7,7 @@ public class ResponseBody {
     boolean success;
     int selected_region_id;
 
-    ResponseErrorsBody responseErrorsBody;
+    Errors errors;
 
     public boolean isSuccess() {
         return success;
@@ -25,33 +25,33 @@ public class ResponseBody {
         this.selected_region_id = selected_region_id;
     }
 
-    public ResponseErrorsBody getErrors() {
-        return responseErrorsBody;
+    public Errors getErrors() {
+        return errors;
     }
 
-    public void setErrors(ResponseErrorsBody responseErrorsBody) {
-        this.responseErrorsBody = responseErrorsBody;
+    public void setErrors(Errors errors) {
+        this.errors = errors;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ResponseBody responseBody = (ResponseBody) o;
-        return success == responseBody.success && selected_region_id == responseBody.selected_region_id && Objects.equals(responseErrorsBody, responseBody.responseErrorsBody);
+        ResponseBody that = (ResponseBody) o;
+        return success == that.success && selected_region_id == that.selected_region_id && Objects.equals(errors, that.errors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(success, selected_region_id, responseErrorsBody);
+        return Objects.hash(success, selected_region_id, errors);
     }
 
     @Override
     public String toString() {
-        return "Response{" +
+        return "ResponseBody{" +
                 "success=" + success +
                 ", selected_region_id=" + selected_region_id +
-                ", errors=" + responseErrorsBody +
+                ", errors=" + errors +
                 '}';
     }
 }
