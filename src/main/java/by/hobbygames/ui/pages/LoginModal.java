@@ -22,15 +22,11 @@ public class LoginModal extends JSExecutor {
 
     public String getPhoneOrEmailError() {
         waitJSLoad();
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LoginModalLocators.ERROR_FOR_EMAIL_FIELD_XPATH)));
         return driver.findElement(By.xpath(LoginModalLocators.ERROR_FOR_EMAIL_FIELD_XPATH)).getText();
     }
 
     public String getPasswordError() {
         waitJSLoad();
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LoginModalLocators.ERROR_FOR_PASSWORD_FIELD_XPATH)));
         return driver.findElement(By.xpath(LoginModalLocators.ERROR_FOR_PASSWORD_FIELD_XPATH)).getText();
     }
 

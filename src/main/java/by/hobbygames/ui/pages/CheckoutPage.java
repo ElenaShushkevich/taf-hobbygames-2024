@@ -49,7 +49,6 @@ public class CheckoutPage extends JSExecutor {
 
 
     public String getEnteredContactsData() {
-        //waitJSLoad();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.CONTACTS_DATA_XPATH)));
         return driver.findElement(By.xpath(CheckoutPageLocators.CONTACTS_DATA_XPATH)).getText();
