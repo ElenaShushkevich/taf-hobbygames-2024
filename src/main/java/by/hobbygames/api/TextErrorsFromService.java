@@ -1,6 +1,6 @@
 package by.hobbygames.api;
 
-public class ErrorsFromService {
+public class TextErrorsFromService {
     public static final String ERRORS_WITH_UNREGISTER_PHONE= "Такой телефон не зарегистрирован";
     public static final String ERROR_WITH_EMPTY_PASSWORD = "Введите пароль";
     public static final String ERROR_INVALID_EMAIL ="Неверный телефон/e-mail";

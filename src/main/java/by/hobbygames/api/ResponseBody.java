@@ -2,12 +2,12 @@ package by.hobbygames.api;
 
 import java.util.Objects;
 
-public class Response {
+public class ResponseBody {
 
     boolean success;
     int selected_region_id;
 
-    Errors errors;
+    ResponseErrorsBody responseErrorsBody;
 
     public boolean isSuccess() {
         return success;
@@ -25,25 +25,25 @@ public class Response {
         this.selected_region_id = selected_region_id;
     }
 
-    public Errors getErrors() {
-        return errors;
+    public ResponseErrorsBody getErrors() {
+        return responseErrorsBody;
     }
 
-    public void setErrors(Errors errors) {
-        this.errors = errors;
+    public void setErrors(ResponseErrorsBody responseErrorsBody) {
+        this.responseErrorsBody = responseErrorsBody;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Response response = (Response) o;
-        return success == response.success && selected_region_id == response.selected_region_id && Objects.equals(errors, response.errors);
+        ResponseBody responseBody = (ResponseBody) o;
+        return success == responseBody.success && selected_region_id == responseBody.selected_region_id && Objects.equals(responseErrorsBody, responseBody.responseErrorsBody);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(success, selected_region_id, errors);
+        return Objects.hash(success, selected_region_id, responseErrorsBody);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Response {
         return "Response{" +
                 "success=" + success +
                 ", selected_region_id=" + selected_region_id +
-                ", errors=" + errors +
+                ", errors=" + responseErrorsBody +
                 '}';
     }
 }

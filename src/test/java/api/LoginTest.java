@@ -1,8 +1,8 @@
 package api;
 
-import by.hobbygames.api.ErrorsFromService;
+import by.hobbygames.api.TextErrorsFromService;
 import by.hobbygames.api.LoginService;
-import by.hobbygames.api.Response;
+import by.hobbygames.api.ResponseBody;
 import by.hobbygames.api.ResponseFields;
 import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.Assertions;
@@ -24,9 +24,9 @@ public class LoginTest {
                 when().
                 post(LoginService.LOGIN_URL).
                 then().statusCode(200).
-                body(ResponseFields.ERRORS_PHONE, equalTo(ErrorsFromService.ERRORS_WITH_EMPTY_PHONE)).and().
-                body(ResponseFields.ERRORS_PASSWORD, equalTo(ErrorsFromService.ERROR_WITH_EMPTY_PASSWORD)).and().
-                body(ResponseFields.ERRORS_LOGIN, equalTo(ErrorsFromService.ERRORS_WITH_EMPTY_PHONE_EMAIL));
+                body(ResponseFields.ERRORS_PHONE, equalTo(TextErrorsFromService.ERRORS_WITH_EMPTY_PHONE)).and().
+                body(ResponseFields.ERRORS_PASSWORD, equalTo(TextErrorsFromService.ERROR_WITH_EMPTY_PASSWORD)).and().
+                body(ResponseFields.ERRORS_LOGIN, equalTo(TextErrorsFromService.ERRORS_WITH_EMPTY_PHONE_EMAIL));
     }
 
     @Test
@@ -38,10 +38,10 @@ public class LoginTest {
                 when().
                 post(LoginService.LOGIN_URL).
                 then();
-        Response response = validatableResponse.extract().as(Response.class);
-        Assertions.assertEquals(ErrorsFromService.ERRORS_WITH_UNREGISTER_PHONE, response.getErrors().getPhone());
-        Assertions.assertEquals(ErrorsFromService.ERROR_WITH_EMPTY_PASSWORD, response.getErrors().getPassword());
-        Assertions.assertEquals(ErrorsFromService.ERROR_INVALID_EMAIL, response.getErrors().getLogin());
+        ResponseBody responseBody = validatableResponse.extract().as(ResponseBody.class);
+        Assertions.assertEquals(TextErrorsFromService.ERRORS_WITH_UNREGISTER_PHONE, responseBody.getErrors().getPhone());
+        Assertions.assertEquals(TextErrorsFromService.ERROR_WITH_EMPTY_PASSWORD, responseBody.getErrors().getPassword());
+        Assertions.assertEquals(TextErrorsFromService.ERROR_INVALID_EMAIL, responseBody.getErrors().getLogin());
     }
 
     @Test

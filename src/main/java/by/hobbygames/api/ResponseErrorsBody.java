@@ -2,7 +2,7 @@ package by.hobbygames.api;
 
 import java.util.Objects;
 
-public class Errors {
+public class ResponseErrorsBody {
 
     private String phone;
     private String password;
@@ -36,8 +36,8 @@ public class Errors {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Errors errors = (Errors) o;
-        return Objects.equals(phone, errors.phone) && Objects.equals(password, errors.password) && Objects.equals(login, errors.login);
+        ResponseErrorsBody responseErrorsBody = (ResponseErrorsBody) o;
+        return Objects.equals(phone, responseErrorsBody.phone) && Objects.equals(password, responseErrorsBody.password) && Objects.equals(login, responseErrorsBody.login);
     }
 
     @Override
