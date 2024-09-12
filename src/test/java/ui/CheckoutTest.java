@@ -105,9 +105,10 @@ public class CheckoutTest extends BaseTest {
         checkoutPage.clickNextBTNAtCheckoutPage();
         checkoutPage.clickRadioButtonPickUpFromStores();
         checkoutPage.clickSelectFromStoresList();
-        checkoutPage.clickSelectPalazzoStore();
-        Assertions.assertEquals("Минск, ТРЦ Palazzo\n" +
-                "Республика Беларусь, г. Минск, ул. Тимирязева, д. 74а, ТРЦ Palazzo\n" + "10:00 – 22:00 Без перерывов и выходных", checkoutPage.getAddedStoreName());
+        checkoutPage.clickSelectKoronaCityStore();
+        Assertions.assertEquals("Минск, ТЦ Корона-Сити\n" +
+                "г. Минск, ул. Денисовская, д. 8, ТЦ \"Корона-сити\", 2-й этаж  \n" +
+                "10:00 – 22:00 Без перерывов и выходных", checkoutPage.getAddedStoreName());
     }
 
     @Test
@@ -125,14 +126,14 @@ public class CheckoutTest extends BaseTest {
         checkoutPage.clickNextBTNAtCheckoutPage();
         checkoutPage.clickRadioButtonPickUpFromStores();
         checkoutPage.clickSelectFromStoresList();
-        checkoutPage.clickSelectPalazzoStore();
+        checkoutPage.clickSelectKoronaCityStore();
         checkoutPage.clickNextButtonAtDeliveryPart();
         checkoutPage.enterName();
         checkoutPage.enterEmail();
         checkoutPage.enterPhone();
         checkoutPage.clickNextBTNForContact();
         Assertions.assertEquals("Елена\n" +
-                "+375-(45)-375-23-75\n" +
+                "+375 12 345 6789\n" +
                 "test@test.com", checkoutPage.getEnteredContactsData());
     }
 
@@ -151,7 +152,7 @@ public class CheckoutTest extends BaseTest {
         checkoutPage.clickNextBTNAtCheckoutPage();
         checkoutPage.clickRadioButtonPickUpFromStores();
         checkoutPage.clickSelectFromStoresList();
-        checkoutPage.clickSelectPalazzoStore();
+        checkoutPage.clickSelectKoronaCityStore();
         checkoutPage.clickNextButtonAtDeliveryPart();
         checkoutPage.enterName();
         checkoutPage.enterEmail();

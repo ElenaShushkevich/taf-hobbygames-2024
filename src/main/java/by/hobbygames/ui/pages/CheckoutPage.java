@@ -13,19 +13,22 @@ public class CheckoutPage extends JSExecutor {
         super.driver = Driver.getDriver();
     }
 
-    public String getCheckoutTitle(){
+    public String getCheckoutTitle() {
         return driver.findElement(By.xpath(CheckoutPageLocators.CHECKOUT_TITLE_XPATH)).getText();
     }
-    public String getTitleOfOrder(){
+
+    public String getTitleOfOrder() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.ITEM_IN_BASKET_XPATH)));
         return driver.findElement(By.xpath(CheckoutPageLocators.ITEM_IN_BASKET_XPATH)).getText();
     }
-    public void clickNextBTNAtCheckoutPage(){
+
+    public void clickNextBTNAtCheckoutPage() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.NEXT_BTN)));
         driver.findElement(By.xpath(CheckoutPageLocators.NEXT_BTN)).click();
     }
+
     public void enterName() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.NAME_INPUT_FIELD_XPATH)));
@@ -53,6 +56,7 @@ public class CheckoutPage extends JSExecutor {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.CONTACTS_DATA_XPATH)));
         return driver.findElement(By.xpath(CheckoutPageLocators.CONTACTS_DATA_XPATH)).getText();
     }
+
     public String getDeliveryHeader() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.DELIVERY_TITLE_XPATH)));
@@ -84,9 +88,12 @@ public class CheckoutPage extends JSExecutor {
         driver.findElement(By.xpath(CheckoutPageLocators.SELECT_FROM_LIST_BTN_XPATH)).click();
     }
 
-    public void clickSelectPalazzoStore() {
+    //    public void clickSelectPalazzoStore() {
+//        waitJSLoad();
+//        driver.findElement(By.xpath(CheckoutPageLocators.PALAZZO_STORES_XPATH)).click();}
+    public void clickSelectKoronaCityStore() {
         waitJSLoad();
-        driver.findElement(By.xpath(CheckoutPageLocators.PALAZZO_STORES_XPATH)).click();
+        driver.findElement(By.xpath(CheckoutPageLocators.KORONA_CITY_STORES_XPATH)).click();
     }
 
     public String getAddedStoreName() {
@@ -96,8 +103,9 @@ public class CheckoutPage extends JSExecutor {
     }
 
     public String getMethodPayment() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.PAYMENT_METHOD_XPATH)));
+        waitJSLoad();
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.PAYMENT_METHOD_XPATH)));
         return driver.findElement(By.xpath(CheckoutPageLocators.PAYMENT_METHOD_XPATH)).getText();
     }
 }
