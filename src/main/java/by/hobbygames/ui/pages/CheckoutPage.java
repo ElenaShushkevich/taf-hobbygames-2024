@@ -52,8 +52,9 @@ public class CheckoutPage extends JSExecutor {
 
 
     public String getEnteredContactsData() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.CONTACTS_DATA_XPATH)));
+        waitJSLoad();
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(CheckoutPageLocators.CONTACTS_DATA_XPATH)));
         return driver.findElement(By.xpath(CheckoutPageLocators.CONTACTS_DATA_XPATH)).getText();
     }
 
@@ -88,13 +89,14 @@ public class CheckoutPage extends JSExecutor {
         driver.findElement(By.xpath(CheckoutPageLocators.SELECT_FROM_LIST_BTN_XPATH)).click();
     }
 
-    //    public void clickSelectPalazzoStore() {
-//        waitJSLoad();
-//        driver.findElement(By.xpath(CheckoutPageLocators.PALAZZO_STORES_XPATH)).click();}
-    public void clickSelectKoronaCityStore() {
+    public void clickSelectPalazzoStore() {
         waitJSLoad();
-        driver.findElement(By.xpath(CheckoutPageLocators.KORONA_CITY_STORES_XPATH)).click();
+        driver.findElement(By.xpath(CheckoutPageLocators.PALAZZO_STORES_XPATH)).click();
     }
+//    public void clickSelectKoronaCityStore() {
+//        waitJSLoad();
+//        driver.findElement(By.xpath(CheckoutPageLocators.KORONA_CITY_STORES_XPATH)).click();
+//    }
 
     public String getAddedStoreName() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

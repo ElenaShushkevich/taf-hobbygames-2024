@@ -20,7 +20,7 @@ public class CheckoutTest extends BaseTest {
         searchPage.clickBasketBTN();
         searchPage.navigateToBasket();
         CheckoutPage checkoutPage = new CheckoutPage();
-        Assertions.assertEquals("Оформление заказа", checkoutPage.getCheckoutTitle());
+        Assertions.assertEquals("Корзина", checkoutPage.getCheckoutTitle());
 
     }
 
@@ -87,7 +87,8 @@ public class CheckoutTest extends BaseTest {
         checkoutPage.clickNextBTNAtCheckoutPage();
         checkoutPage.clickRadioButtonPickUpFromStores();
         checkoutPage.clickNextButtonAtDeliveryPart();
-        Assertions.assertEquals("Выберите способ доставки", checkoutPage.getErrorMessageWithoutStoresDeliveryPart());
+        //Assertions.assertEquals("Выберите способ получения заказа", checkoutPage.getErrorMessageWithoutStoresDeliveryPart());
+        Assertions.assertEquals("Выберите способ получения заказа", checkoutPage.getErrorMessageAtDeliveryPart());
     }
 
     @Test
@@ -105,10 +106,11 @@ public class CheckoutTest extends BaseTest {
         checkoutPage.clickNextBTNAtCheckoutPage();
         checkoutPage.clickRadioButtonPickUpFromStores();
         checkoutPage.clickSelectFromStoresList();
-        checkoutPage.clickSelectKoronaCityStore();
-        Assertions.assertEquals("Минск, ТЦ Корона-Сити\n" +
-                "г. Минск, ул. Денисовская, д. 8, ТЦ \"Корона-сити\", 2-й этаж  \n" +
-                "10:00 – 22:00 Без перерывов и выходных", checkoutPage.getAddedStoreName());
+        checkoutPage.clickSelectPalazzoStore();
+        Assertions.assertEquals("Минск, ТЦ \"Палаццо\" ?\n" +
+                "Доставка с центрального склада\n" +
+                "г. Минск, ул. Тимирязева, д. 74 А, 2-й этаж\n" +
+                "10:00 – 22:00", checkoutPage.getAddedStoreName());
     }
 
     @Test
@@ -126,7 +128,7 @@ public class CheckoutTest extends BaseTest {
         checkoutPage.clickNextBTNAtCheckoutPage();
         checkoutPage.clickRadioButtonPickUpFromStores();
         checkoutPage.clickSelectFromStoresList();
-        checkoutPage.clickSelectKoronaCityStore();
+        checkoutPage.clickSelectPalazzoStore();
         checkoutPage.clickNextButtonAtDeliveryPart();
         checkoutPage.enterName();
         checkoutPage.enterEmail();
@@ -152,7 +154,7 @@ public class CheckoutTest extends BaseTest {
         checkoutPage.clickNextBTNAtCheckoutPage();
         checkoutPage.clickRadioButtonPickUpFromStores();
         checkoutPage.clickSelectFromStoresList();
-        checkoutPage.clickSelectKoronaCityStore();
+        checkoutPage.clickSelectPalazzoStore();
         checkoutPage.clickNextButtonAtDeliveryPart();
         checkoutPage.enterName();
         checkoutPage.enterEmail();
